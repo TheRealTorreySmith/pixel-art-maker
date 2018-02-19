@@ -2,6 +2,13 @@ html, body, .container {
     height:100%;
 }
 
+body {
+  background-image: url("bricks-1.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
 div.pixels {
   border: 1px solid black;
   display: block;
@@ -13,23 +20,26 @@ div.pixels {
 
 div.colors {
   border: 1px solid black;
+  cursor: pointer;
   height: 30px;
   width: 30px;
   margin: 0 2px;
   align-self: center;
 }
 
+div.colors:hover {
+  border: 3px solid black;
+}
 
 .container {
   align-content: center;
-  /* display: flex;
-  justify-content: center; */
 
 }
 
 .canvas {
   display: flex;
   flex-wrap: wrap;
+  background-color: white;
   border: 1px solid;
   width: 402px;
   height: 402px;
