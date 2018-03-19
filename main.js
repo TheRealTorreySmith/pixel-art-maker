@@ -30,13 +30,15 @@ function setPenColor(event) {
 //Sets the drag to false and then changes it to true as the start event is initiated
 var drag = false;
 function start(event) {
+  if (event.target.className == 'pixels') {
   event.target.style.backgroundColor = penColor;
   drag = true;
+  }
 }
 
 //Continues to apply the color as the mouse drags until the "mouseup" event
 function dragging(event) {
-  if (drag === true) {
+  if (drag === true && event.target.className == 'pixels') {
     event.target.style.backgroundColor = penColor;
   }
 }
@@ -44,8 +46,10 @@ function dragging(event) {
 //Initiates the "mouseup" event, thus ending the drag event
 //Resets the drag equal to false
 function end(event) {
+  if (event.target.className == 'pixels') {
   event.target.style.backgroundColor = penColor;
   drag = false;
+  }
 }
 
 //Event listener for the click on a particular color in the color palette
@@ -56,5 +60,4 @@ canvas.addEventListener("mousedown", start);
 canvas.addEventListener("mouseover", dragging);
 //Event listener that "ends" the dragging event with the "mouseup"
 canvas.addEventListener("mouseup", end);
-
 });
